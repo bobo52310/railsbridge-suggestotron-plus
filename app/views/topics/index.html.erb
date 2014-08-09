@@ -1,6 +1,6 @@
 <h1>Listing topics</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,9 +14,9 @@
       <tr>
         <td><%= link_to topic.title, topic %></td>
         <td><%= topic.votes.count %></td>
-        <td><%= button_to('+1', upvote_topic_path(topic), method: :post) %></td>
-        <td><%= button_to('-1', downvote_topic_path(topic), method: :post) %></td>
-        <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to('+1', upvote_topic_path(topic), method: :post, :class=>"btn btn-info") %></td>
+        <td><%= button_to('-1', downvote_topic_path(topic), method: :postm, :class=>"btn btn-success") %></td>
+        <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Topic', new_topic_path %>
+<%= link_to 'New Topic', new_topic_path, :class=>"btn btn-default" %>
